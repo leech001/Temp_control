@@ -24,17 +24,17 @@ notify - Уведомления
 notify_change - Задать период уведомлений (/notify_change Период в минутах)
 """
 
-rele = port.PA1
+rele = port.PA1 #Порт реле комнатного термостата
 gpio.init()
 gpio.setcfg(rele, gpio.OUTPUT)
 
-token = '...'  #TempBot
+token = '...'  #Токен к Telegram боту
 bot = telepot.Bot(token)
 
-hysteresis = 0.5
-temp = 24.0
-heater = True
-t_notify = 60
+hysteresis = 0.5 #Гистерезис температуры комнатного термостата
+temp = 24.0 #Начальная температура комнатного термостата
+heater = True #Режим нагрева
+t_notify = 60 #Интервал уведомлений (мин)
 
 def getTemperature(idW1):
     filepath = '/sys/devices/w1_bus_master1/' + idW1 + '/w1_slave'
