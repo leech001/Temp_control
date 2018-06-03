@@ -1,3 +1,4 @@
+# Project is deprecated new version on https://github.com/leech001/TempControl-ESP8266
 # Комнатный термостат или терморегулятор на Orange PI
 Проект комнатного термостата или терморегулятора (контроль температуры) с управлением насосами на Oprange PI с использованием управления через Telegram.
 
