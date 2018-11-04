@@ -28,10 +28,11 @@ Project room thermostat or the thermostat (temperature control) with pump contro
    2. Telepot
    3. gpio_pyH3
    
-## Активация 1-Wire интерфейса в Orange PI
-```
+## Активация 1-Wire интерфейса в Orange PI (Linux kernel 3.4)
+
 root@orangepipcplus:/etc# cat modules
 
+```
 8189fs
 w1-sunxi
 w1-gpio
@@ -47,6 +48,15 @@ w1-therm
 ![GPIO](http://yonec.pl/data/uploads/orange-pi-plus-5.png)
 
 ![GPIO](https://cdn-images-1.medium.com/max/800/1*pcfeGQr_mUJrXDFDrdKMww.png)
+
+## Активация 1-Wire интерфейса в Orange PI (Linux kernel 4.14)
+
+/boot/armbianEnv.txt and add the lines:
+```
+overlays=w1-gpio
+param_w1_pin=PA20             # desired pin
+param_w1_pin_int_pullup=1     # internal pullup-resistor: 1=on, 0=off
+```
 
 ## Установка Python library on controlling GPIO pins, I2C and SPI buses
 
